@@ -1,0 +1,87 @@
+html {
+    background-color: /*bgc*/ #FFFFFF;
+}
+
+body {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight:200;
+    margin: .5em auto;
+    padding: .5em;
+    background-color: /*bbg*/ #FFFFFF;
+    input {background-color:White;}
+    border: 0.5em solid /*brc*/ #F2E9D8;
+}
+
+p {
+    margin: .1em 0;
+}
+ul
+{
+    list-style-type: none;    
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    background-color: /*hbg*/ #F28705;
+    color: /*hc*/ #FFFFFF;
+    font-size: 150%;
+    font-weight:200;
+    padding: 0.5em;
+    margin: -0.75em -0.75em 0.75em -0.75em;
+}
+h2 {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 100%;
+    font-weight:200;
+    color: #F28705;
+    line-height: 12pt;
+}
+h4 {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 100%;
+    font-weight:200;
+    color: #F28705;
+    line-height: 12pt;
+}
+form{
+    color: #2267F2;
+}
+
+
+#seedlink {
+    color: #3FBF03;
+}
+#displaylink {
+    color: #3FBF03;
+}
+#clearlink {
+    color: #3FBF03;
+}
+#addnew {
+    color: #3FBF03;
+}
+#errors {
+    color: #FF0000;
+}
+#itemName {background-color: /*ibc*/ #DAFDFF;}
+
+#mediaType {background-color: /*ibc*/ #DAFDFF;}
+#priority {background-color: /*ibc*/ #DAFDFF;}
+#desireDate {background-color: /*ibc*/ #DAFDFF;}
+#description {background-color: /*ibc*/ #DAFDFF;}
+#submitButton {background-color: /*ibc*/ #DAFDFF;}
+
+
+.bckColor {background-color: #FFF000;}
+.hasFocus{border: 2px solid #3FBF03;}
+.hasHover{border: 2px solid #2267F2;}
+.even{background: #ffffff;}
+
+
+/* COLORS
+Kuler - io7
+colors drk blue #2267F2 lit blue #1BDDF2 green #3FBF03 orange #F28705 red #F24738
+very light blue DAFDFF
+*/
+
+

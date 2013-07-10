@@ -1,0 +1,74 @@
+<! additem.html
+<! toBuy Project
+<! David Peterson 2013/5/8
+<! VFW 1305 assignment 3
+<! toBuy gives the user a central location to create a "wishlist"
+<! for books, music, software,
+<! ultimately the category can be linked to preferred online store
+
+<! index.html = Main Startup Screen for toBuy Application
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>toBuy WishList</title>
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="toBuy Wishlist" />
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="user-scalable=no, with=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+</head>
+<body>
+    <header>
+        <h1>Add <em>toBuy</em> Item</h1>
+        <nav>
+            <a href="#" id="displayLink">Display All</a>
+            <a href="#" id="clearLink">Clear All</a>
+            <a href="#" id="seedLink">Seed Test Data</a>
+            <a href="additem.html" id="addNew" style="display:none;">Add New Item</a>
+        </nav>
+    </header>
+    <form action="#" method="post" id="inputForm">
+        <fieldset id="toBuyFieldset">
+            <legend>Add a <em>toBuy</em> Item</legend>
+            <span>* all fields are required *</span>
+            <ul id="errors"></ul>
+            <ul id="questions">
+                <li><label for="itemName">Item:</label><input type="text" id="itemName" size=35 /></li>
+                <! -- Media Type -->
+                <li id="select"><label for="group">Select Media Type:</label><br /></li> 
+<! -- Desired Vendors -->
+                <li>Desired Vendor:
+                <ul class="checkbox">
+                    <style>.item {white-space: nowrap;display:inline}</style>
+                    <input type="checkbox" value="Amazon" id="amazon" name="vendors" /><label for="amazon">Amazon</label>
+                    <input type="checkbox" value="iTunes" id="iTunes" name="vendors" /><label for="iTunes">iTunes</label>
+                    <input type="checkbox" value="Audible" id="audible" name="vendors" /><label for="audible">Audible</label>         
+                    </style>
+                </ul>
+            </li>
+<! -- Priority Range -->
+            <li>
+                <label for="priority">How much do you desire this item:</label>
+                <input type="range" min="1" max="10" name="rating" type="range"  id="priority" >
+            </li>
+<! -- Purcahse by Date -->
+            <li>
+                <label for="desireDate">Purchase by date:</label> <input type="date" id="desireDate" >
+            </li>
+<! -- Description -->
+            <li><label for="description">Notes:</label> <textarea  id="description" rows"3" cols="30">Add necessary notes and instructions here.</textarea> 
+<! -- Save Date - hidden field --> 
+        <input type="hidden" name="saveDateTime" id="saveDate" value=$date>
+        </ul>
+<! -- Submit Button -->
+        <input type="button" value="Submit" id="submitButton" >
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
