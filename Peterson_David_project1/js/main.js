@@ -11,7 +11,7 @@
 window.addEventListener("DOMContentLoaded", function(){
     
     //getElementById
-    function $(x){
+    function eLement(x){
         var theElement = document.getElementById(x);
         return theElement;
     }
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //Create Select Field Element and populate with option
     function makeMedia(){
         var formTag = document.getElementsByTagName("form"),  //formTag is an array of all the formTags
-            selectLi = $('select'),
+            selectLi = eLement('select'),
             makeSelect = document.createElement('select');
             makeSelect.setAttribute("id", "mediaTypes");
         for (var i=0, j=mediaTypes.length; i<j; i++){
@@ -50,17 +50,17 @@ window.addEventListener("DOMContentLoaded", function(){
     function toggleControls(n){
         switch(n){
             case "on":
-                $('inputForm').style.display = "none";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "none";
-                $('addNew').style.display = "inline"
+                eLement('inputForm').style.display = "none";
+                eLement('clearLink').style.display = "inline";
+                eLement('displayLink').style.display = "none";
+                eLement('addNew').style.display = "inline"
                 break;
             case "off":
-                $('inputForm').style.display = "block";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "inline";
-                $('addNew').style.display = "none";
-                $('items').style.display = "none";
+                eLement('inputForm').style.display = "block";
+                eLement('clearLink').style.display = "inline";
+                eLement('displayLink').style.display = "inline";
+                eLement('addNew').style.display = "none";
+                eLement('items').style.display = "none";
                 break;
             default:
                 return false;
@@ -79,12 +79,12 @@ window.addEventListener("DOMContentLoaded", function(){
         //Object properties are going to contain an array with form label and input values
         getChkItems();
         var item        = {};
-            item.itemName       = ["Item Name", $('itemName').value];
-            item.mediaType      = ["Media Type", "book"];   //$('mediaType').value];
+            item.itemName       = ["Item Name", eLement('itemName').value];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", desiredVendorValue];
-            item.priority       = ["Priority", $('priority').value];
-            item.desireDate     = ["DesiredDate", $('desireDate').value];
-            item.description    = ["Description", $('description').value];
+            item.priority       = ["Priority", eLement('priority').value];
+            item.desireDate     = ["DesiredDate", eLement('desireDate').value];
+            item.description    = ["Description", eLement('description').value];
 
         //Save Data into local storage: use stringify to convert our object to a string
         localStorage.setItem(id, JSON.stringify(item));
@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
         var makeList = document.createElement('ul');
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        $('items').style.display = "block";
+        eLement('items').style.display = "block";
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
             var linksLi = document.createElement('li');
@@ -169,9 +169,9 @@ window.addEventListener("DOMContentLoaded", function(){
         toggleControls("off");
 
         //poplulate the form from current localStorage values
-        $('itemName').value = item.itemName[1];
+        eLement('itemName').value = item.itemName[1];
         // mediaType
-        $('select').value = item.mediaType[1];
+        eLement('select').value = item.mediaType[1];
         
         // checkboxes
             document.getElementById("amazon").checked=false;
@@ -188,16 +188,16 @@ window.addEventListener("DOMContentLoaded", function(){
             document.getElementById("audible").checked=true;
         }
 
-        //$('mediaType').value = item.media[1];
-        $('priority').value = item.priority[1];
-        $('desireDate').value = item.desireDate[1];
-        $('description').value = item.description[1];
+        //eLement('mediaType').value = item.media[1];
+        eLement('priority').value = item.priority[1];
+        eLement('desireDate').value = item.desireDate[1];
+        eLement('description').value = item.description[1];
         
         //Remove the initial listener from the input 'save contact' button
         save.removeEventListener("click", storeData);
         //Change Submit Button value to edit button
-        $('submitButton').value = "Edit Contact";
-        var editSubmit = $('submitButton');
+        eLement('submitButton').value = "Edit Contact";
+        var editSubmit = eLement('submitButton');
         //Save the key value established in this function as a property of the editSubmit event
         editSubmit.addEventListener("click", validate);
         editSubmit.key = this.key;
@@ -226,8 +226,8 @@ window.addEventListener("DOMContentLoaded", function(){
     
     function validate(e){
         //define elements we want to check
-        var getItemName = $('itemName');
-        var getDesireDate = $('desireDate');
+        var getItemName = eLement('itemName');
+        var getDesireDate = eLement('desireDate');
         //Reset
         errMsg.innerHTML = "";
         getItemName.style.border = "1px solid black";
@@ -268,57 +268,233 @@ window.addEventListener("DOMContentLoaded", function(){
     //Gather all form field values and store in object
     //Object properties are going to contain an array with form label and input values
     seedData = function(){
-        // seed movie
+        // 1 seed movie
         var id          = Math.floor(Math.random()*100000001);
         var item        = {};
-            item.itemName       = ["Item Name", "Star Wars Video"];
-            item.mediaType      = ["Media Type", "movie"];   //$('mediaType').value];
+            item.itemName       = ["Item Name", "Making of Star Wars Video"];
+            item.mediaType      = ["Media Type", "movie"];   //eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", "Amazon"];
             item.priority       = ["Priority", "99"];
             item.desireDate     = ["DesiredDate", "01/11/2011"];
-            item.description    = ["Description", "Description One"];
+            item.description    = ["Description", "How the movie was made, etc."];
         localStorage.setItem(id, JSON.stringify(item));
     
-        // seed book
+        // 2 seed book
         var id          = Math.floor(Math.random()*100000001);
         var item        = {};
             item.itemName       = ["Item Name", "Inferno - Dan Brown"];
-            item.mediaType      = ["Media Type", "book"];   //$('mediaType').value];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", "Amazon"];
             item.priority       = ["Priority", "22"];
             item.desireDate     = ["DesiredDate", "02/12/2012"];
-            item.description    = ["Description", "Description Two"];
+            item.description    = ["Description", "Dan's latest book"];
         localStorage.setItem(id, JSON.stringify(item));
     
-        // seed audible
+        // 3 seed audible
         var id          = Math.floor(Math.random()*100000001);
         var item        = {};
             item.itemName       = ["Item Name", "Doc"];
-            item.mediaType      = ["Media Type", "audible"];   //$('mediaType').value];
+            item.mediaType      = ["Media Type", "audible"];   //eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", "Audible"];
             item.priority       = ["Priority", "33"];
             item.desireDate     = ["DesiredDate", "03/13/2013"];
-            item.description    = ["Description", "Description Three"];
+            item.description    = ["Description", "Saddest sports story ever"];
         localStorage.setItem(id, JSON.stringify(item));
 
-        // seed music
+        // 4 seed music
         var id          = Math.floor(Math.random()*100000001);
         var item        = {};
             item.itemName       = ["Item Name", "ColdPlay"];
-            item.mediaType      = ["Media Type", "music"];   //$('mediaType').value];
+            item.mediaType      = ["Media Type", "music"];   //eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", "iTunes"];
             item.priority       = ["Priority", "44"];
             item.desireDate     = ["DesiredDate", "04/14/2014"];
-            item.description    = ["Description", "Description Four"];
+            item.description    = ["Description", "Not sure which album to listen to"];
         localStorage.setItem(id, JSON.stringify(item));
-                
+         
+		 // 5 seed movie
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Kojak Seaons One"];
+            item.mediaType      = ["Media Type", "movie"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "49"];
+            item.desireDate     = ["DesiredDate", "06/11/2013"];
+            item.description    = ["Description", "Best season is one"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 6 seed book
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Enders game Orson Scott Card"];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "75"];
+            item.desireDate     = ["DesiredDate", "12/12/2013"];
+            item.description    = ["Description", "The book that started it all"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 7 seed audible
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Black Swan"];
+            item.mediaType      = ["Media Type", "audible"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Audible"];
+            item.priority       = ["Priority", "33"];
+            item.desireDate     = ["DesiredDate", "12/25/2013"];
+            item.description    = ["Description", "Recommended Business book"];
+        localStorage.setItem(id, JSON.stringify(item));
+
+        // 8 seed music
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Bob Dylan Dylan"];
+            item.mediaType      = ["Media Type", "music"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "iTunes"];
+            item.priority       = ["Priority", "44"];
+            item.desireDate     = ["DesiredDate", "01/14/2014"];
+            item.description    = ["Description", "Dylans First Album"];
+        localStorage.setItem(id, JSON.stringify(item));
+		
+          // 9 seed movie
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Jeremiah Johnson"];
+            item.mediaType      = ["Media Type", "movie"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "88"];
+            item.desireDate     = ["DesiredDate", "01/11/2014"];
+            item.description    = ["Description", "Favorite Redford Movie"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 10 seed book
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Adams McCullough"];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "22"];
+            item.desireDate     = ["DesiredDate", "07/01/2012"];
+            item.description    = ["Description", "Greatest America"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 11 seed audible
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Cod"];
+            item.mediaType      = ["Media Type", "audible"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Audible"];
+            item.priority       = ["Priority", "33"];
+            item.desireDate     = ["DesiredDate", "12/25/2013"];
+            item.description    = ["Description", "Strange fish Book"];
+        localStorage.setItem(id, JSON.stringify(item));
+
+        // 12 seed music
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Slice Five for Fighting"];
+            item.mediaType      = ["Media Type", "music"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "iTunes"];
+            item.priority       = ["Priority", "88"];
+            item.desireDate     = ["DesiredDate", "12/14/2014"];
+            item.description    = ["Description", "Last Albi,"];
+        localStorage.setItem(id, JSON.stringify(item));
+                 
+		// 13 seed movie
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Sopranos"];
+            item.mediaType      = ["Media Type", "movie"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "99"];
+            item.desireDate     = ["DesiredDate", "12/12/2014"];
+            item.description    = ["Description", "The most watched TV series"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 14 seed book
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Suduku"];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "99"];
+            item.desireDate     = ["DesiredDate", "02/12/2013"];
+            item.description    = ["Description", "Brain Exercise"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 15 seed audible
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Woodrow Wilson"];
+            item.mediaType      = ["Media Type", "audible"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Audible"];
+            item.priority       = ["Priority", "66"];
+            item.desireDate     = ["DesiredDate", "12/13/2013"];
+            item.description    = ["Description", "Not sure of the author's name"];
+        localStorage.setItem(id, JSON.stringify(item));
+
+        // 16 seed music
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Creedence Clearwater"];
+            item.mediaType      = ["Media Type", "music"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "iTunes"];
+            item.priority       = ["Priority", "66"];
+            item.desireDate     = ["DesiredDate", "12/12/2014"];
+            item.description    = ["Description", "Any Album"];
+        localStorage.setItem(id, JSON.stringify(item));
+          
+		  // 17 seed movie
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "1984"];
+            item.mediaType      = ["Media Type", "movie"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "66"];
+            item.desireDate     = ["DesiredDate", "01/11/2013"];
+            item.description    = ["Description", "The Old One"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 18 seed book
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "IOS 8 Programming"];
+            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Amazon"];
+            item.priority       = ["Priority", "99"];
+            item.desireDate     = ["DesiredDate", "09/12/2013"];
+            item.description    = ["Description", "Pick Author when books come out"];
+        localStorage.setItem(id, JSON.stringify(item));
+    
+        // 19 seed audible
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "D-Day Ambrose"];
+            item.mediaType      = ["Media Type", "audible"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "Audible"];
+            item.priority       = ["Priority", "33"];
+            item.desireDate     = ["DesiredDate", "12/13/2013"];
+            item.description    = ["Description", "Gift for my Dad"];
+        localStorage.setItem(id, JSON.stringify(item));
+
+        // 20 seed music
+        var id          = Math.floor(Math.random()*100000001);
+        var item        = {};
+            item.itemName       = ["Item Name", "Nickel Creek When In Rome"];
+            item.mediaType      = ["Media Type", "music"];   //eLement('mediaType').value];
+            item.desiredVendor  = ["Desired Vendor", "iTunes"];
+            item.priority       = ["Priority", "55"];
+            item.desireDate     = ["DesiredDate", "05/15/2014"];
+            item.description    = ["Description", "Neo BLuegrass"];
+        localStorage.setItem(id, JSON.stringify(item)); 
+				 
         alert("Data Seeded!");
     }
     
     //Variable defautls
     var mediaTypes = ["-- Media Type --", "book", "ebook", "audible", "music", "movie"];
     var desiredVendorValue;
-    var errMsg = $('errors');
+    var errMsg = eLement('errors');
     makeMedia();
     
     //Set Link and Submit Click Events    
@@ -356,16 +532,16 @@ window.addEventListener("DOMContentLoaded", function(){
 //    }
 
 
-    var displayLink = $('displayLink');
+    var displayLink = eLement('displayLink');
     displayLink.addEventListener("click", getData);
     
-    var clearLink = $('clearLink');
+    var clearLink = eLement('clearLink');
     clearLink.addEventListener("click", clearLocal);
     
-    var seedLink = $('seedLink');
+    var seedLink = eLement('seedLink');
     seedLink.addEventListener("click", seedData);
     
-    var save = $('submitButton');
+    var save = eLement('submitButton');
     save.addEventListener("click", validate);
     
    //EventListener
