@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function(){
         return theElement;
     }
     
-    //Create Select Field Element and populate with option
+/*    //Create Select Field Element and populate with option
     function makeMedia(){
         var formTag = document.getElementsByTagName("form"),  //formTag is an array of all the formTags
             selectLi = eLement('select'),
@@ -31,13 +31,13 @@ window.addEventListener("DOMContentLoaded", function(){
         }
         if(selectLi){selectLi.appendChild(makeSelect)};
     }
+*/
+ 
     
 //Find value of selected checkbox
 //    function getSelectedCheckbox(){
 
 //        var desiredVendorvalue = document.forms[0].desiredVendor;
-    
-
     var getChkItems = function(){
     var checkBoxes = document.getElementById("inputForm").vendors;
         for(i=0, j=checkBoxes.length; i<j; i++){
@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function(){
         getChkItems();
         var item        = {};
             item.itemName       = ["Item Name", eLement('itemName').value];
-            item.mediaType      = ["Media Type", "book"];   //eLement('mediaType').value];
+            item.mediaType      = ["Media Type", eLement('mediaType').value];
             item.desiredVendor  = ["Desired Vendor", desiredVendorValue];
             item.priority       = ["Priority", eLement('priority').value];
             item.desireDate     = ["DesiredDate", eLement('desireDate').value];
@@ -167,12 +167,11 @@ window.addEventListener("DOMContentLoaded", function(){
         var item = JSON.parse(value);
         // Show the form
         toggleControls("off");
-
         //poplulate the form from current localStorage values
         eLement('itemName').value = item.itemName[1];
         // mediaType
-        eLement('select').value = item.mediaType[1];
-        
+        eLement('mediaType').value = item.mediaType[1];
+
         // checkboxes
             document.getElementById("amazon").checked=false;
             document.getElementById("iTunes").checked=false;
@@ -242,13 +241,13 @@ window.addEventListener("DOMContentLoaded", function(){
         }
         
         // Date Validation
-    
-        var re = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+		// not needed for iPhone 
+/*        var re = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
         if(getDesireDate.value ==="" || !(re.exec(getDesireDate.value))){
             var desireDateError = "Please enter a valid date.";
             getDesireDate.style.border = "1px solid red";
             messageArray.push(desireDateError);
-        }
+        } */
         // if errors, display on screen
         if(messageArray.length >= 1){
             for(var i=0, j=messageArray.length; i < j; i++){
@@ -265,6 +264,78 @@ window.addEventListener("DOMContentLoaded", function(){
         } 
 
     }
+  
+    //Variable defautls
+//    var mediaTypes = ["-- Media Type --", "book", "ebook", "audible", "music", "movie"];
+    var desiredVendorValue;
+    var errMsg = eLement('errors');
+//    makeMedia();
+    
+//Set Link and Submit Click Events    
+// -- Border Active 
+// -- focus actions
+    var focusItem = function(){
+        itemName.setAttribute("class", "hasFocus");
+    }
+    var focusDesireDate = function(){
+        desireDate.setAttribute("class", "hasFocus");
+    }    
+    var focusDescription = function(){
+        description.setAttribute("class", "hasFocus");
+    }
+        
+
+    // -- actions
+    var blurItem = function(){
+        itemName.removeAttribute("class", "hasFocus");
+    }    
+    var blurDesireDate = function(){
+        desireDate.removeAttribute("class", "hasFocus");
+    } 
+    var blurDescription = function(){
+        description.removeAttribute("class", "hasFocus");
+    }        
+    var mouseOverItemName = function(){
+        itemName.setAttribute("class", "hasHover");
+    }
+    var mouseOnItemName = function(){
+        itemName.removeAttribute("class", "hasHover");
+    }
+//    itemName.onmouseover = function(){
+//        description.setAttribute("class", "hovering");
+//    }
+
+
+    var displayLink = eLement('displayLink');
+    displayLink.addEventListener("click", getData);
+    
+    var clearLink = eLement('clearLink');
+    clearLink.addEventListener("click", clearLocal);
+    
+    var seedLink = eLement('seedLink');
+    seedLink.addEventListener("click", seedData);
+    
+    var save = eLement('submitButton');
+    save.addEventListener("click", validate);
+    
+   //EventListener
+    itemName.addEventListener("focus", focusItem);
+    itemName.addEventListener("blur", blurItem);
+    itemName.onmouseover = mouseOverItemName;
+    itemName.onmouseout = mouseOnItemName;
+    
+    desireDate.addEventListener("focus", focusDesireDate);
+    desireDate.addEventListener("blur", blurDesireDate);
+    
+    description.addEventListener("focus", focusDescription);
+    description.addEventListener("blur", blurDescription);
+    description.onmouseover = mouseOverItemName;
+    description.onmouseout = mouseOnItemName;
+
+});    
+    
+
+
     //Gather all form field values and store in object
     //Object properties are going to contain an array with form label and input values
     seedData = function(){
@@ -490,73 +561,4 @@ window.addEventListener("DOMContentLoaded", function(){
 				 
         alert("Data Seeded!");
     }
-    
-    //Variable defautls
-    var mediaTypes = ["-- Media Type --", "book", "ebook", "audible", "music", "movie"];
-    var desiredVendorValue;
-    var errMsg = eLement('errors');
-    makeMedia();
-    
-    //Set Link and Submit Click Events    
-    // -- Border Active 
-    // -- focus actions
-    var focusItem = function(){
-        itemName.setAttribute("class", "hasFocus");
-    }
-    var focusDesireDate = function(){
-        desireDate.setAttribute("class", "hasFocus");
-    }    
-    var focusDescription = function(){
-        description.setAttribute("class", "hasFocus");
-    }
-        
-
-    // -- actions
-    var blurItem = function(){
-        itemName.removeAttribute("class", "hasFocus");
-    }    
-    var blurDesireDate = function(){
-        desireDate.removeAttribute("class", "hasFocus");
-    } 
-    var blurDescription = function(){
-        description.removeAttribute("class", "hasFocus");
-    }        
-    var mouseOverItemName = function(){
-        itemName.setAttribute("class", "hasHover");
-    }
-    var mouseOnItemName = function(){
-        itemName.removeAttribute("class", "hasHover");
-    }
-//    itemName.onmouseover = function(){
-//        description.setAttribute("class", "hovering");
-//    }
-
-
-    var displayLink = eLement('displayLink');
-    displayLink.addEventListener("click", getData);
-    
-    var clearLink = eLement('clearLink');
-    clearLink.addEventListener("click", clearLocal);
-    
-    var seedLink = eLement('seedLink');
-    seedLink.addEventListener("click", seedData);
-    
-    var save = eLement('submitButton');
-    save.addEventListener("click", validate);
-    
-   //EventListener
-    itemName.addEventListener("focus", focusItem);
-    itemName.addEventListener("blur", blurItem);
-    itemName.onmouseover = mouseOverItemName;
-    itemName.onmouseout = mouseOnItemName;
-    
-    desireDate.addEventListener("focus", focusDesireDate);
-    desireDate.addEventListener("blur", blurDesireDate);
-    
-    description.addEventListener("focus", focusDescription);
-    description.addEventListener("blur", blurDescription);
-    description.onmouseover = mouseOverItemName;
-    description.onmouseout = mouseOnItemName;
-
-});    
-    
+  

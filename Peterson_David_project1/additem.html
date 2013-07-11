@@ -41,8 +41,17 @@
             <ul id="errors"></ul>
             <ul id="questions">
                 <li><label for="itemName">Item:</label><input type="text" id="itemName" size=35 /></li>
-                <! -- Media Type -->
-                <li id="select"><label for="group">Select Media Type:</label><br /></li> 
+<! -- Media Type -->
+			<li> Media Type:
+                <select id="mediaType" name="Media Type">
+  					<option value="book">Book</option>
+  					<option value="ebook">eBook</option>
+  					<option value="audible">Audible</option>
+  					<option value="music">Music</option>
+                    <option value="movie">Movie</option>
+				</select>
+       		</li>
+                
 <! -- Desired Vendors -->
                 <li>Desired Vendor:
                 <ul class="checkbox">
