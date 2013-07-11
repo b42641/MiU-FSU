@@ -27,27 +27,26 @@
 </head>
 <body>
     <header>
-        <img src="./img/wishlistIcon200.png" id="wishlistIcon" width="100">
+        <img src="./img/wishlistIcon.png" id="wishlistIcon" width="305" >
         <div id="Navigation">
-    <ul>
-    	<button type="button" id="buttonAddItem" style="width:200px">Add An Item</button>
-    </ul>
+
+    	<button type="button" id="buttonAddItem" style="width:200px" onClick="parent.location='./additem.html'">Add An Item</button>
+ 
     <div class="search">
-        <input type="text" id="searchField" text="search"/>
+        <input type="text" id="searchField" text="search" value="  Search" />
     </div>
     <br style="clear: both;" />
 </div>
 
         <h2><em>toBuy</em> to capture the things you want to purchase.</h2>
-        <h2>Books - Ebooks - Audible books - Music - Software</h2>    
     </header>
-    		<button type="button" id="brBrowse" style="width:300px">Browse By:</button>
+    		<button type="button" id="brBrowse" style="width:305px">Browse By:</button>
         <nav>
-  			<button type="button" id="brItemName" style="width:300px">Item Name</button>
-            <button type="button" id="brMediaType" style="width:300px">Media Type</button>
-  			<button type="button" id="brVendor" style="width:300px">Vendor</button>
-  			<button type="button" id="brDesire" style="width:300px">Desire</button>
-  			<button type="button" id="bePurchaseDate" style="width:300px">Purchase Date</button>
+  			<button type="button" id="brItemName" style="width:305px" onClick="parent.location='./britem.html'">Item Name</button>
+            <button type="button" id="brMediaType" style="width:305px" onClick="parent.location='./brMedia.html'">Media Type</button>
+  			<button type="button" id="brVendor" style="width:305px" onClick="parent.location='./brVendor.html'">Vendor</button>
+  			<button type="button" id="brDesire" style="width:305px" onClick="parent.location='./brDesire.html'">Desire</button>
+  			<button type="button" id="bePurchaseDate" style="width:305px" onClick="parent.location='./brPurchase.html'">Purchase Date</button>
 
         </nav>
 <! -- javascript -- >

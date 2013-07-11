@@ -20,6 +20,9 @@ ul
     margin: 0;
     padding: 0;
 }
+li{
+	list-style-type: none;
+}
 h1 {
     background-color: /*hbg*/ #F28705;
     color: /*hc*/ #FFFFFF;
@@ -31,8 +34,9 @@ h1 {
 h2 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 80%;
-    font-weight:200;
-    color: #F28705;
+    font-weight:300;
+	padding-left: .5em;
+    color: #F60;
     line-height: 6pt;
 }
 h4 {
@@ -73,10 +77,16 @@ form{
 .search 
 {
     position: absolute;
-    top: 35px;
-    right: -55px;
+    top: 2px;
+    right: -52px;
     width:200px;
     height:40px;
+}
+#wishlistIcon {
+/*   position:absolute; */
+   left:50%;
+   top:50%;
+   margin-top:-20px;
 }
 
 button{
@@ -88,11 +98,12 @@ button{
 }
 
 #buttonAddItem{
-	text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+/*	text-shadow: 2px 2px 6px #000066 ;*/
+	box-shadow:#000 2px 2px 4px;
 	margin-left:55px;
 	height:35px;
 	font-size:20px;
-	background-color:#F24738;
+	background-color:#f80f8b;
 	border:none;
 	-webkit-border-radius: 15px;
 }
