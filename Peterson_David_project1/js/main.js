@@ -97,13 +97,15 @@ window.addEventListener("DOMContentLoaded", function(){
             alert("There is no data in local storage.")
         }
         // Write Data from Local Storage to Screen
-        
         var makeDiv = document.createElement('div');
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement('ul');
+		makeDiv.innerHTML = '';
+
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
         eLement('items').style.display = "block";
+
         for(var i=0, len=localStorage.length; i<len; i++){
             var makeli = document.createElement('li');
             var linksLi = document.createElement('li');
