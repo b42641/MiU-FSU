@@ -94,8 +94,7 @@ window.addEventListener("DOMContentLoaded", function(){
     function getData(){
         toggleControls("on");
         if(localStorage.length === 0){
-            alert("There is no data in local storage so default data was added.");
-			autoFillData();
+            alert("There is no data in local storage.")
         }
         // Write Data from Local Storage to Screen
         var makeDiv = document.createElement('div');
@@ -138,20 +137,6 @@ window.addEventListener("DOMContentLoaded", function(){
         imageLi.appendChild(newImg);
     }
     
-	// Auto
-	function autoFillData(){
-		// the actual JSON OBJECT is loaded from HTML page
-		//	store JSON data
-		alert("Start");
-		alert(json);
-		for(var n in json){
-			alert("made it");
-			var id          = Math.floor(Math.random()*100000001);
-	        localStorage.setItem(id, JSON.stringify(json[n]));
-		}
-	}
-	
-	
     // Make Item Links
     //Creat the edit and delete links for each item
     function makeItemLinks(key, linksLi){

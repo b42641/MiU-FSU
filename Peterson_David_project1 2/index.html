@@ -1,0 +1,55 @@
+<! index.html
+<! toBuy Project
+<! additem page
+<! David Peterson 2013/5/8
+<! VFW 1305 assignment 3
+<! toBuy gives the user a central location to create a "wishlist"
+<! for books, music, software,
+<! ultimately the category can be linked to preferred online store
+<!
+<!DOCTYPE html>
+<html>
+<! -- Document Head -->
+<link rel="stylesheet" href="./css/styles.css" type="text/css" />
+<!div id="container" style="width:320px"</div>
+<head>
+    
+
+<! -- Meta Content -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="toBuy Wishlist" />
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="user-scalable=no, with=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title><em>toBuy</em> WishList</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css"  />
+</head>
+<body>
+    <header>
+        <img src="./img/wishlistIcon.png" id="wishlistIcon" width="305" >
+        <div id="Navigation">
+
+    	<button type="button" id="buttonAddItem" style="width:200px" onClick="parent.location='./additem.html'">Add An Item</button>
+ 
+    <div class="search">
+        <input type="text" id="searchField" text="search" value="  Search" />
+    </div>
+    <br style="clear: both;" />
+</div>
+
+        <h2><em>toBuy</em> to capture the things you want to purchase.</h2>
+    </header>
+    		<button type="button" id="brBrowse" style="width:305px">Browse By:</button>
+        <nav>
+  			<button type="button" id="brItemName" style="width:305px" onClick="parent.location='./britem.html'">Item Name</button>
+            <button type="button" id="brMediaType" style="width:305px" onClick="parent.location='./brMedia.html'">Media Type</button>
+  			<button type="button" id="brVendor" style="width:305px" onClick="parent.location='./brVendor.html'">Vendor</button>
+  			<button type="button" id="brDesire" style="width:305px" onClick="parent.location='./brDesire.html'">Desire</button>
+  			<button type="button" id="bePurchaseDate" style="width:305px" onClick="parent.location='./brPurchase.html'">Purchase Date</button>
+
+        </nav>
+<! -- javascript -- >
+    <!script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
