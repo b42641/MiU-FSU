@@ -39,6 +39,13 @@ h2 {
     color: #F60;
     line-height: 6pt;
 }
+h3 {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+	background-color: #F28705;
+	text-align: center;
+    font-size: 150%;
+    font-weight:200;
+}
 h4 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 60%;
@@ -72,6 +79,27 @@ form{
     display: block;
     height: 40px;
     width: 100px;
+}
+.infoText{
+	font-size: 80%;
+	font-weight: 200;	
+}
+.linklist{
+	font-size: 80%;
+    font-weight:200;
+}
+#gitHubLink{
+	padding-top: 1em;
+	font-size:100%;
+	font-weight:200;
+}
+
+
+.ui-grid-b a {
+padding-top: -10em;
+margin:5px;
+text-align:center;
+font-size:10px;	
 }
 
 .search 
