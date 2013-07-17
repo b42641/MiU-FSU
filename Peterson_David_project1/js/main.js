@@ -142,10 +142,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	function autoFillData(){
 		// the actual JSON OBJECT is loaded from HTML page
 		//	store JSON data
-		alert("Start");
-		alert(json);
 		for(var n in json){
-			alert("made it");
 			var id          = Math.floor(Math.random()*100000001);
 	        localStorage.setItem(id, JSON.stringify(json[n]));
 		}
