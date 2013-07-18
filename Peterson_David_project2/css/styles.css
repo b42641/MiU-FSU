@@ -11,9 +11,7 @@ body {
     input {background-color:White;}
     border: 0.5em solid /*brc*/ #F2E9D8;
 }
-p {
-    margin: .1em 0;
-}
+
 ul
 {
     list-style-type: none;    
@@ -24,21 +22,30 @@ li{
 	list-style-type: none;
 }
 h1 {
-    background-color: /*hbg*/ #F28705;
-    color: /*hc*/ #FFFFFF;
-    font-size: 150%;
+    color: /*hc*/ #000000;
+    font-size: 200%;
     font-weight:200;
-    padding: 0.5em;
-    margin: -0.75em -0.75em 0.75em -0.75em;
+	text-align:center;
+
 }
 h2 {
+    color: /*hc*/ #ffffff;
+    font-size: 200%;
+    font-weight:200;
+	text-align:center;
+
+}
+
+
+
+/*h2 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 80%;
     font-weight:300;
 	padding-left: .5em;
     color: #F60;
     line-height: 6pt;
-}
+}*/
 h3 {
     font-family: "Helvetica Neue", "Helvetica", sans-serif;
 	background-color: #F28705;
@@ -94,14 +101,21 @@ form{
 	font-weight:200;
 }
 
+.ui-grid-b {
+padding-top: -300em;		
+}
 
 .ui-grid-b a {
-padding-top: -10em;
-margin:5px;
 text-align:center;
 font-size:10px;	
 }
+#notWorking{
+	font-size 600%;
+}
 
+.pItem{
+	font-size 200%;	
+}
 .search 
 {
     position: absolute;

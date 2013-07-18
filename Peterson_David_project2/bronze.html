@@ -74,38 +74,19 @@
     		<h2>Info</h2>
     	</div>
     
-    	<div data-role="content">
-        	<div data-role="collapsible-set">
-                <div data-role="collapsible" data-collapsed="true" data-theme="e">
-                    <h3>about the app</h3>
-                    <div class="infoText">
-                    	<p>toBuy Wishlist will ultimately be the one place for all your wishlists.</p>
-                    	<p>Wherever you are, you can instantly save an item to your wishlist. </p>
-                    	<p>You hear a favorite song. A friend recommends a new group. A book review catches your eye.</p>
-                    	<p>Whatever the inspiration, toBuy Wishlist will capture and help you order your item.</p>
-                    </div>
-                </div>
-                <div data-role="collapsible" data-collapsed="true" data-theme="e">
-                    <h3>about the author</h3>
-                    <div class="infoText">
-                    <p>Author: David B. Peterson is a student at Full Sail University.</p>
-                    <p>He is majoring in Mobile Development. This is his first application.</p>
-                    <p>Photo Credit: David B. Peterson</p>
-          			<p>Icons Created by: David B. Peterson</p>
-                    </div>
-                </div>
-                <div data-role="collapsible" data-collapsed="false" data-theme="e">
-                    <h3>Important Links</h3>
-                    <div class="linklist">
-                    <p><a href="#main"> Gold App</a></p>
-                    <p><a href="./bronze.html"> Bronze App</a></p>
-            
-                    <p id="gitHubLink">GitHub Link:</p>
-                    <p><a href="https://github.com/b42641/MiU-FSU.git"> https://github.com/b42641/MiU-FSU.git</a></p>
-					</div>
-                </div>
-            </div>
-    	</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" data-theme="e" >
+			    <li><a href="#drillDownApp">
+				<h1>about the app</h1>
+			    </a></li>
+			    <li><a href="#drillDownAuthor">
+				<h1>about the author</h1>
+			    </a></li>
+			    <li><a href="#drillDownLinks">
+				<h1>Important Links</h1>
+			    </a></li>
+		        </ul>
+    	        </div>
          <div data-role="footer" data-position="fixed" data-theme="e">
         	<div data-role="navbar">
 				<ul>
@@ -116,7 +97,75 @@
     	    </div>
 		</div>
    </div>
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+
+    <div data-role="page" id="drillDownApp" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Application Info</h2>
+    	</div>
+  
+    
+   		<div data-role="content">
+       		<div class="infoText">
+          		<p>toBuy Wishlist will ultimately be the one place for all your wishlists.</p>
+            	<p>Wherever you are, you can instantly save an item to your wishlist. </p>
+           		<p>You hear a favorite song. A friend recommends a new group. A book review catches your eye.</p>
+            	<p>Whatever the inspiration, toBuy Wishlist will capture and help you order your item.</p>
+        	</div>
+    	</div>            
+    	<div data-role="footer" data-position="fixed" data-theme="e">
+  			<p></p>
+    	</div>
+	</div>
    
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+
+    <div data-role="page" id="drillDownAuthor" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Info</h2>
+    	</div>
+   		<div data-role="content">
+        	<div class="infoText">
+            	<p>Author: David B. Peterson is a student at Full Sail University.</p>
+            	<p>He is majoring in Mobile Development. This is his first application.</p>
+            	<p>Photo Credit: David B. Peterson</p>
+            	<p>Icons Created by: David B. Peterson</p>
+        	</div>
+     	</div>           
+     	<div data-role="footer" data-position="fixed" data-theme="e">
+     		<p></p>
+		</div>
+    </div> 
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+    <div data-role="page" id="drillDownLinks" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Info</h2>
+    	</div>
+   		<div data-role="content">
+        	<div class="infoText">
+
+                    <div class="linklist">
+                    <p><a href="index.html"> Gold App</a></p>
+                    <p><a href="#main"> Bronze App</a></p>
+            
+                    <p id="gitHubLink">GitHub Link:</p>
+                    <p><a href="https://github.com/b42641/MiU-FSU.git"> https://github.com/b42641/MiU-FSU.git</a></p>
+					</div>
+        	</div>
+     	</div>           
+     	<div data-role="footer" data-position="fixed" data-theme="e">
+     		<p></p>
+		</div>
+    </div> 
+
+
+   
+
+
+
 <!---------- NEWS PAGE ------------------------>
    <div data-role="page" id="news" data-add-back-btn="true">
 	    <div data-role="header" data-position="fixed">
