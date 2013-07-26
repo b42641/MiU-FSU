@@ -1,0 +1,172 @@
+html {
+    background-color: /*bgc*/ #FFFFFF;
+}
+
+body {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight:200;
+    margin: .5em auto;
+    padding: .5em;
+    background-color: /*bbg*/ #FFFFFF;
+    input {background-color:White;}
+    border: 0.5em solid /*brc*/ #F2E9D8;
+}
+
+ul
+{
+    list-style-type: none;    
+    margin: 0;
+    padding: 0;
+}
+li{
+	list-style-type: none;
+}
+h1 {
+    color: /*hc*/ #000000;
+    font-size: 200%;
+    font-weight:200;
+	text-align:center;
+
+}
+h2 {
+    color: /*hc*/ #ffffff;
+    font-size: 200%;
+    font-weight:200;
+	text-align:center;
+
+}
+
+
+
+/*h2 {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 80%;
+    font-weight:300;
+	padding-left: .5em;
+    color: #F60;
+    line-height: 6pt;
+}*/
+h3 {
+  /*  font-family: "Helvetica Neue", "Helvetica", sans-serif;*/
+	background-color: #F28705;
+	text-align: center;
+    font-size: 100%;
+/*    font-weight:200;*/
+}
+h4 {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 60%;
+    font-weight:200;
+    color: #F28705;
+    line-height: 6pt;
+}
+form{
+    color: #2267F2;
+}*/
+
+
+.infoText{
+	font-size: 80%;
+	font-weight: 200;	
+}
+.linklist{
+	font-size: 80%;
+    font-weight:200;
+}
+#gitHubLink{
+	padding-top: 1em;
+	font-size:100%;
+	font-weight:200;
+}
+
+.ui-grid-b {
+padding-top: -300em;		
+}
+
+.ui-grid-b a {
+text-align:center;
+font-size:10px;	
+}
+#notWorking{
+	font-size 600%;
+}
+
+.pItem{
+	font-size 200%;	
+}
+.search 
+{
+    position: absolute;
+    top: 2px;
+    right: -52px;
+    width:200px;
+    height:40px;
+}
+#wishlistIcon {
+/*   position:absolute; */
+   left:50%;
+   top:50%;
+   margin-top:-20px;
+}
+
+button{
+	height:26px;
+	background-color:#9FF;
+	border-left-style:none;
+	border-right-style:none;
+	border-top-style:none;
+}
+
+#buttonAddItem{
+/*	text-shadow: 2px 2px 6px #000066 ;*/
+	box-shadow:#000 2px 2px 4px;
+	margin-left:55px;
+	height:35px;
+	font-size:20px;
+	background-color:#f80f8b;
+	border:none;
+	-webkit-border-radius: 15px;
+}
+#brBrowse{
+	font-size:16px;
+	border-bottom-style:double;
+}
+
+
+#seedlink {
+    color: #3FBF03;
+}
+#displaylink {
+    color: #3FBF03;
+}
+#clearlink {
+    color: #3FBF03;
+}
+/*#addnew {
+    color: #3FBF03;
+}*/
+#errors {
+    color: #FF0000;
+}
+
+
+#mediaType {background-color: /*ibc*/ #DAFDFF;}
+#priority {background-color: /*ibc*/ #DAFDFF;}
+#desireDate {background-color: /*ibc*/ #DAFDFF;}
+#description {background-color: /*ibc*/ #DAFDFF;}
+#submitButton {background-color: /*ibc*/ #DAFDFF;}
+
+
+.bckColor {background-color: #FFF000;}
+.hasFocus{border: 2px solid #3FBF03;}
+.hasHover{border: 2px solid #2267F2;}
+.even{background: #ffffff;}
+
+
+/* COLORS
+Kuler - io7
+colors drk blue #2267F2 lit blue #1BDDF2 green #3FBF03 orange #F28705 red #F24738
+very light blue DAFDFF
+*/
+
+
