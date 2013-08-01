@@ -61,21 +61,25 @@
                     </style>
                 </ul>
             </li>
-<! -- Priority Range -->
+			<! -- Priority Range -->
             <li>
                 <label for="priority">How much do you desire this item:</label>
                 <input type="range" min="1" max="10" name="rating" type="range"  id="priority" >
             </li>
-<! -- Purcahse by Date -->
+            
+			<! -- Purcahse by Date -->
             <li>
                 <label for="desireDate">Purchase by date:</label> <input type="date" id="desireDate" >
             </li>
-<! -- Description -->
+            
+			<! -- Description -->
             <li><label for="description">Notes:</label> <textarea  id="description" rows"3" cols="30">Add necessary notes and instructions here.</textarea> 
-<! -- Save Date - hidden field --> 
+			
+			<! -- Save Date - hidden field --> 
         <input type="hidden" name="saveDateTime" id="saveDate" value=$date>
         </ul>
-<! -- Submit Button -->
+
+		<! -- Submit Button -->
         <input type="button" value="Submit" id="submitButton" >
         <li><a href="./index.html" id="brHome">Back to Main Page</a></li>
     <script src="js/json.js" type="text/javascript"></script>

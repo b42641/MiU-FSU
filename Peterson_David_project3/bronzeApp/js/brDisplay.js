@@ -12,14 +12,14 @@
 
 
 window.addEventListener("DOMContentLoaded", function(){
-/*    
+  
     //getElementById
     function eLement(x){
         var theElement = document.getElementById(x);
         return theElement;
     }
     
- 
+ /*
     
 //Find value of selected checkbox
 //    function getSelectedCheckbox(){

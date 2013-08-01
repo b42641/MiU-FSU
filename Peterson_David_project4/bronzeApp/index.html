@@ -1,0 +1,343 @@
+<!doctype html>  
+<html lang="en">
+<head>
+<!---------- META-------------------------->
+	<meta charset="utf-8">
+	
+	<title>toBuy Wishlist</title>
+	
+<!---------- Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+<!---------- MAIN PAGE ------------------------>
+	<div data-role="page" id="main">
+	    <div data-role="header" data-position="fixed">
+        	<img src="./img/wishlistIcon.png" id="wishlistIcon" width="350" >
+        	<input type="text" id="searchField" text="search" value="  Search" />
+	    </div>
+		<div data-role="content">
+        	<p><a href="addItem.html" data-role="button" data-icon="edit" data-theme="e">Add Item</a></p>
+            <h3>Browse</h3>
+
+			<div class="ui-grid-b">
+                <div class="ui-block-a">
+                	<ul data-role="listview" data-inset="true">
+                        <li data-icon="false"><a href="#brItemName" >Item Name</a></li>
+                        <li data-icon="false"><a href="#browseNotWorking">Desire Date</a></li>
+                    </ul>
+                </div>
+                <div class="ui-block-b">
+                	<ul data-role="listview" data-inset="true">
+    	                <li data-icon="false"><a href="#browseNotWorking">Media Type</a></li>
+                        <li data-icon="false"><a href="#browseNotWorking">Priority</a></li>
+                	</ul> 
+                </div>
+                <div class="ui-block-c">
+                	<ul data-role="listview" data-inset="true">
+    	                <li data-icon="false"><a href="#browseNotWorking">Desire Date</a></li>
+                	</ul> 
+                </div>  
+            </div>
+    	</div>
+    
+	    <div data-role="footer" data-position="fixed" data-theme="e">
+        	<div data-role="navbar">
+				<ul>
+				    <li><a href="#home" class="ui-btn-active">Home</a></li>
+				    <li><a href="#info" >Info</a></li>
+		    		<li><a href="#news" >News</a></li>
+	        	</ul>
+    	    </div>
+		</div>
+    </div>	
+
+<!---------- INFO PAGE ------------------------>
+
+    <div data-role="page" id="info" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Info</h2>
+    	</div>
+    
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" data-theme="e" >
+			    <li><a href="#drillDownApp">
+				<h1>about the app</h1>
+			    </a></li>
+			    <li><a href="#drillDownAuthor">
+				<h1>about the author</h1>
+			    </a></li>
+			    <li><a href="#drillDownLinks">
+				<h1>Important Links</h1>
+			    </a></li>
+		        </ul>
+    	        </div>
+         <div data-role="footer" data-position="fixed" data-theme="e">
+        	<div data-role="navbar">
+				<ul>
+				    <li><a href="#main" >Home</a></li>
+				    <li><a href="#info" class="ui-btn-active">Info</a></li>
+		    		<li><a href="#news" >History</a></li>
+	        	</ul>
+    	    </div>
+		</div>
+   </div>
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+
+    <div data-role="page" id="drillDownApp" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Application Info</h2>
+    	</div>
+  
+    
+   		<div data-role="content">
+       		<div class="infoText">
+          		<p>toBuy Wishlist will ultimately be the one place for all your wishlists.</p>
+            	<p>Wherever you are, you can instantly save an item to your wishlist. </p>
+           		<p>You hear a favorite song. A friend recommends a new group. A book review catches your eye.</p>
+            	<p>Whatever the inspiration, toBuy Wishlist will capture and help you order your item.</p>
+        	</div>
+    	</div>            
+    	<div data-role="footer" data-position="fixed" data-theme="e">
+  			<p></p>
+    	</div>
+	</div>
+   
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+
+    <div data-role="page" id="drillDownAuthor" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Info</h2>
+    	</div>
+   		<div data-role="content">
+        	<div class="infoText">
+            	<p>Author: David B. Peterson is a student at Full Sail University.</p>
+            	<p>He is majoring in Mobile Development. This is his first application.</p>
+            	<p>Photo Credit: David B. Peterson</p>
+            	<p>Icons Created by: David B. Peterson</p>
+        	</div>
+     	</div>           
+     	<div data-role="footer" data-position="fixed" data-theme="e">
+     		<p></p>
+		</div>
+    </div> 
+
+<!---------- INFO DRILL DOWN PAGE ------------------------>
+    <div data-role="page" id="drillDownLinks" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>Info</h2>
+    	</div>
+   		<div data-role="content">
+        	<div class="infoText">
+
+                    <div class="linklist">
+                    <p><a href="../goldApp/index.html"> Gold App - right-click to open application in another tab</a></p>
+                    <p><a href="#main"> Bronze App</a></p>
+            
+                    <p id="gitHubLink">GitHub Link:</p>
+                    <p><a href="https://github.com/b42641/MiU-FSU.git"> https://github.com/b42641/MiU-FSU.git</a></p>
+					</div>
+        	</div>
+     	</div>           
+     	<div data-role="footer" data-position="fixed" data-theme="e">
+     		<p></p>
+		</div>
+    </div> 
+
+
+   
+
+
+
+<!---------- NEWS PAGE ------------------------>
+   <div data-role="page" id="news" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed">
+    		<h2>History of Additions</h2>
+    	</div>
+    
+    	<div data-role="content">
+    		<ul data-role="listview" data-filter="true">
+            	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/music.png" >
+                	<p class="pDate">7/14/2013</p>
+                    <p class="pItem">Five for Fighting - MP3</p>
+                    </a>
+                </li>
+            	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/audible.png">
+                	<p class="pDate">7/12/2013</p>
+                    <p class="pItem">Doc - Audible Book</p>
+                    </a>
+                </li>
+              	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/book.png">
+                	<p class="pDate">7/12/2013</p>
+                    <p class="pItem">iOS7 Programming Book - Book</p>
+                    </a>
+                </li>
+               	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/ebook.png">
+                	<p class="pDate">7/11/2013</p>
+                    <p class="pItem">The Count of Monte Cristo - eBook</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#displayNotWorking">
+                    <img src="img/book.png">
+                	<p class="pDate">7/10/2013</p>
+                    <p class="pItem">Cincinnati Reds History</p>
+                    </a>
+                </li>
+            	<li>
+                	<a href="#displayNotWorking">
+                	<p class="pDate">7/9/2013</p>
+                    <img src="img/music.png" >
+                    <p class="pItem">Bob Dylan - MP3</p>
+                    </a>
+                </li>
+              	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/music.png" >
+                	<p class="pDate">7/8/2013</p>
+                    <p class="pItem">Heart of Gold - MP3</p>
+                    </a>
+                </li>
+               	<li>
+                	<a href="#displayNotWorking">
+                    <img src="img/music.png" >
+                	<p class="pDate">7/4/2013</p>
+                    <p class="pItem">John Philip Sousa - MP3</p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#displayNotWorking">
+                    <img src="img/book.png">
+                	<p class="pDate">7/2/2013</p>
+                    <p class="pItem">D-Day by Ambrose - eBook</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    
+        <div data-role="footer" data-position="fixed" data-theme="e">
+        	<div data-role="navbar">
+				<ul>
+				    <li><a href="#main" >Home</a></li>
+				    <li><a href="#info" >Info</a></li>
+		    		<li><a href="#news" class="ui-btn-active">History</a></li>
+	        	</ul>
+    	    </div>
+		</div>
+    </div>  
+
+<!---------- Display Item Not Working--------------------->
+  	<div data-role="page" id="displayNotWorking"  data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed" data-theme="e">
+        	<h1> Under Construction </h1>
+	    </div>
+        <div data-role="content">
+			<div class="notWorking">
+        		<h1> The Item Display Feature is under construction.</h1>
+                <h2> <a href="#news"> Return</a></h2>
+        	</div>
+    	</div>
+	    <div data-role="footer" data-position="fixed" data-theme="e">
+			<h1> Under Construction </h1>
+		</div>
+    </div>	
+
+
+<!---------- Browse Item Not Working--------------------->
+  	<div data-role="page" id="browseNotWorking"  data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed" data-theme="e">
+        	<h1> Under Construction </h1>
+	    </div>
+        <div data-role="content">
+			<div class="notWorking">
+        		<h1> The Browse Feature is under construction.</h1>
+                <h2> <a href="#news"> Return</a></h2>
+        	</div>
+    	</div>
+	    <div data-role="footer" data-position="fixed" data-theme="e">
+			<h1> Under Construction </h1>
+		</div>
+    </div>	
+         
+      
+<!---------- Browse by Item --------------------->
+  	<div data-role="page" id="brItemName" data-add-back-btn="true">
+	    <div data-role="header" data-position="fixed" data-theme="e">
+        	<h1> Browse by Item </h1>
+	    </div>
+        <div data-role="content">
+    		<ol data-role="listview" data-filter="true">
+            	<li>
+                    <p class="pItem">Five for Fighting - MP3</p>
+                	<p class="pDate">7/14/2013</p>
+                </li>
+            	<li>
+            		<p class="pItem">Doc - Audible Book</p>
+                	<p class="pDate">7/12/2013</p>
+                </li>
+              	<li>
+                	<p class="pItem">iOS7 Programming Book - Book</p>
+                	<p class="pDate">7/12/2013</p>         
+                </li>
+               	<li>
+                    <p class="pItem">The Count of Monte Cristo - eBook</p>  	
+                	<p class="pDate">7/11/2013</p>
+                </li>
+                <li>
+                    <p class="pItem">Cincinnati Reds Bobblehead circa. 1960</p>         
+                	<p class="pDate">7/10/2013</p>
+                </li>
+            	<li>
+                    <p class="pItem">Bob Dylan - MP3</p>
+                    <p class="pDate">7/9/2013</p>
+                </li>
+              	<li>
+                    <p class="pItem">Heart of Gold - MP3</p>
+                    <p class="pDate">7/8/2013</p>
+                </li>
+               	<li>
+                    <p class="pItem">John Philip Sousa - MP3</p>
+                    <p class="pDate">7/4/2013</p
+                </li>
+                <li>
+                	<p class="pItem">D-Day by Ambrose - eBook</p>
+                	<p class="pDate">7/2/2013</p>                   
+                </li>
+            </ol>
+    	</div>
+	    <div data-role="footer" data-position="fixed" data-theme="e">
+			<h1> Under Construction </h1>
+		</div>
+    </div>	
+       
+<!---------- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/brDisplay.js"></script>
+</body>
+</html>

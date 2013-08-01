@@ -1,0 +1,22 @@
+/* CUSTOM STYLES */
+
+label.error{display:block; color:#CC0000;}
+ul
+{
+	list-style-type: none;
+}
+
+h1
+{
+	font-size:x-large;
+}
+
+#addItemErrorsLink{display:none;}
+
+#addItem {color:#CCCCCC;}
+
+#itemName{color: #c0c0c0;}
+
+/*.bckColor {background-color: #FFF000;}*/
+.hasFocus{border: 2px solid #3FBF03;}
+.hasHover{border: 2px solid #2267F2;}
